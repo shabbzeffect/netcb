@@ -137,7 +137,7 @@ export const teamMembers = [
   },
   {
     name: "Shabir Wangara",
-    image: "/team/shabir.jfif",
+    image: "/team/shabir.jpg",
     role: "Systems Engineer",
     bio: "Shabir is a systems engineer specializing in infrastructure deployment and management. His technical expertise contributes to NETCB's ability to deliver reliable, secure IT solutions for enterprise clients.",
     linkedin: "https://www.linkedin.com/in/shabir-wangara/",
