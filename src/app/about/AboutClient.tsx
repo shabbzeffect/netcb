@@ -96,7 +96,7 @@ const team = [
   },
   {
     name: "Shabir Wangara",
-    image: "/team/shabir.jfif",
+    image: "/team/shabir.jpg",
     role: "Systems Engineer",
   },
 ];
