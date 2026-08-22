@@ -13,10 +13,10 @@ const footerLinks = {
     { name: "Open Source", href: "/solutions/open-source" },
   ],
   Services: [
-    { name: "Support Services", href: "/services" },
-    { name: "Legal Compliance", href: "/services" },
-    { name: "Training Services", href: "/services" },
-    { name: "Software Development", href: "/services" },
+    { name: "Support Services", href: "/services/support" },
+    { name: "Legal Compliance", href: "/services/legal" },
+    { name: "Documentation", href: "/services/documentation" },
+    { name: "All Services", href: "/services" },
   ],
   Products: [
     { name: "Wazuh", href: "/products#wazuh" },

@@ -122,10 +122,6 @@ export function ContactPageClient() {
                           </div>
                         </div>
                         <div className="space-y-2 ml-[52px]">
-                          <div className="flex items-center gap-2">
-                            <span className="text-xs font-[var(--font-mono)] text-[var(--netcb-text-muted)] w-24">Botswana:</span>
-                            <span className="text-sm text-[var(--netcb-text-muted)] italic">Pending</span>
-                          </div>
                           <a href="tel:+254707112232" className="flex items-center gap-2 group">
                             <span className="text-xs font-[var(--font-mono)] text-[var(--netcb-text-muted)] w-24">Kenya:</span>
                             <span className="text-sm font-semibold text-[var(--netcb-text)] group-hover:text-[var(--netcb-accent)] transition-colors">+254 707 112 232</span>

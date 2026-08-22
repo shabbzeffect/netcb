@@ -21,7 +21,7 @@ export const company = {
   },
   founder: {
     name: "Cobus Burgers",
-    title: "Founder & CEO",
+    title: "Founder & Managing Director",
   },
   description:
     "NETCB Limited is a South African enterprise IT company specialising in cybersecurity, hybrid cloud infrastructure, digital workspaces, and open source solutions. For over two decades, we have delivered trusted infrastructure services to enterprises across Africa.",
