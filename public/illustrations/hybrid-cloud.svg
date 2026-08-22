@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <defs>
+    <linearGradient id="cloud-grad" x1="100" y1="30" x2="100" y2="170" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#00e5ff" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#7c3aed" stop-opacity="0.05"/>
+    </linearGradient>
+  </defs>
+  <!-- Main cloud -->
+  <path d="M55 120 Q30 120 30 95 Q30 75 50 70 Q55 50 80 45 Q105 40 120 55 Q140 45 155 55 Q175 65 170 90 Q180 95 180 110 Q180 130 155 130 Z" fill="url(#cloud-grad)" stroke="#00e5ff" stroke-opacity="0.3" stroke-width="1.2"/>
+  <!-- Inner cloud detail -->
+  <path d="M65 115 Q45 115 45 98 Q45 82 60 78 Q64 62 84 58 Q102 54 115 65 Q132 57 144 65 Q160 73 156 92 Q165 96 165 108 Q165 122 148 122 Z" fill="none" stroke="#00e5ff" stroke-opacity="0.15" stroke-width="0.8"/>
+  <!-- Server rack 1 -->
+  <rect x="55" y="135" width="28" height="35" rx="3" fill="#0a0e14" stroke="#00e5ff" stroke-opacity="0.4" stroke-width="1"/>
+  <rect x="59" y="139" width="20" height="4" rx="1" fill="#00e5ff" fill-opacity="0.2"/>
+  <rect x="59" y="146" width="20" height="4" rx="1" fill="#00e5ff" fill-opacity="0.15"/>
+  <rect x="59" y="153" width="20" height="4" rx="1" fill="#00e5ff" fill-opacity="0.2"/>
+  <circle cx="75" cy="163" r="2" fill="#22c55e" fill-opacity="0.8"/>
+  <!-- Server rack 2 -->
+  <rect x="90" y="130" width="28" height="40" rx="3" fill="#0a0e14" stroke="#7c3aed" stroke-opacity="0.4" stroke-width="1"/>
+  <rect x="94" y="134" width="20" height="4" rx="1" fill="#7c3aed" fill-opacity="0.2"/>
+  <rect x="94" y="141" width="20" height="4" rx="1" fill="#7c3aed" fill-opacity="0.15"/>
+  <rect x="94" y="148" width="20" height="4" rx="1" fill="#7c3aed" fill-opacity="0.2"/>
+  <rect x="94" y="155" width="20" height="4" rx="1" fill="#7c3aed" fill-opacity="0.15"/>
+  <circle cx="110" cy="165" r="2" fill="#22c55e" fill-opacity="0.8"/>
+  <!-- Server rack 3 -->
+  <rect x="125" y="138" width="28" height="32" rx="3" fill="#0a0e14" stroke="#00e5ff" stroke-opacity="0.3" stroke-width="1"/>
+  <rect x="129" y="142" width="20" height="4" rx="1" fill="#00e5ff" fill-opacity="0.15"/>
+  <rect x="129" y="149" width="20" height="4" rx="1" fill="#00e5ff" fill-opacity="0.2"/>
+  <rect x="129" y="156" width="20" height="4" rx="1" fill="#00e5ff" fill-opacity="0.15"/>
+  <circle cx="145" cy="165" r="2" fill="#22c55e" fill-opacity="0.8"/>
+  <!-- Connection lines -->
+  <line x1="69" y1="135" x2="69" y2="130" stroke="#00e5ff" stroke-opacity="0.3" stroke-width="1" stroke-dasharray="2 2"/>
+  <line x1="104" y1="130" x2="104" y2="125" stroke="#7c3aed" stroke-opacity="0.3" stroke-width="1" stroke-dasharray="2 2"/>
+  <line x1="139" y1="138" x2="139" y2="133" stroke="#00e5ff" stroke-opacity="0.3" stroke-width="1" stroke-dasharray="2 2"/>
+  <!-- Data flow dots -->
+  <circle cx="69" cy="127" r="1.5" fill="#00e5ff" fill-opacity="0.6"/>
+  <circle cx="104" cy="122" r="1.5" fill="#7c3aed" fill-opacity="0.6"/>
+  <circle cx="139" cy="130" r="1.5" fill="#00e5ff" fill-opacity="0.6"/>
+</svg>

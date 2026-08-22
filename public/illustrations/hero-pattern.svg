@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" fill="none" opacity="0.12">
+  <defs>
+    <radialGradient id="glow1" cx="200" cy="200" r="200" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#00e5ff" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#00e5ff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow2" cx="600" cy="150" r="180" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#7c3aed" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#7c3aed" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <ellipse cx="200" cy="200" rx="200" ry="200" fill="url(#glow1)"/>
+  <ellipse cx="600" cy="150" rx="180" ry="180" fill="url(#glow2)"/>
+  <!-- Grid lines -->
+  <g stroke="#00e5ff" stroke-opacity="0.08" stroke-width="0.5">
+    <line x1="0" y1="50" x2="800" y2="50"/><line x1="0" y1="100" x2="800" y2="100"/>
+    <line x1="0" y1="150" x2="800" y2="150"/><line x1="0" y1="200" x2="800" y2="200"/>
+    <line x1="0" y1="250" x2="800" y2="250"/><line x1="0" y1="300" x2="800" y2="300"/>
+    <line x1="0" y1="350" x2="800" y2="350"/>
+    <line x1="100" y1="0" x2="100" y2="400"/><line x1="200" y1="0" x2="200" y2="400"/>
+    <line x1="300" y1="0" x2="300" y2="400"/><line x1="400" y1="0" x2="400" y2="400"/>
+    <line x1="500" y1="0" x2="500" y2="400"/><line x1="600" y1="0" x2="600" y2="400"/>
+    <line x1="700" y1="0" x2="700" y2="400"/>
+  </g>
+  <!-- Nodes -->
+  <circle cx="150" cy="120" r="3" fill="#00e5ff" fill-opacity="0.5"/>
+  <circle cx="350" cy="80" r="2" fill="#00e5ff" fill-opacity="0.3"/>
+  <circle cx="550" cy="180" r="3" fill="#7c3aed" fill-opacity="0.4"/>
+  <circle cx="650" cy="100" r="2" fill="#7c3aed" fill-opacity="0.3"/>
+  <circle cx="250" cy="300" r="2" fill="#00e5ff" fill-opacity="0.2"/>
+  <circle cx="450" cy="250" r="3" fill="#00e5ff" fill-opacity="0.35"/>
+  <circle cx="700" cy="300" r="2" fill="#7c3aed" fill-opacity="0.25"/>
+  <!-- Connections -->
+  <line x1="150" y1="120" x2="350" y2="80" stroke="#00e5ff" stroke-opacity="0.15" stroke-width="0.5"/>
+  <line x1="350" y1="80" x2="550" y2="180" stroke="#00e5ff" stroke-opacity="0.1" stroke-width="0.5"/>
+  <line x1="550" y1="180" x2="650" y2="100" stroke="#7c3aed" stroke-opacity="0.12" stroke-width="0.5"/>
+  <line x1="150" y1="120" x2="250" y2="300" stroke="#00e5ff" stroke-opacity="0.08" stroke-width="0.5"/>
+  <line x1="450" y1="250" x2="550" y2="180" stroke="#00e5ff" stroke-opacity="0.1" stroke-width="0.5"/>
+  <line x1="450" y1="250" x2="700" y2="300" stroke="#7c3aed" stroke-opacity="0.08" stroke-width="0.5"/>
+</svg>

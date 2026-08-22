@@ -1,0 +1,102 @@
+{
+  "common": {
+    "company": "NETCB Limited",
+    "tagline": "Enterprise IT Infrastructure & Cybersecurity",
+    "learnMore": "Learn more",
+    "getInTouch": "Get in Touch",
+    "contactUs": "Contact Us",
+    "readMore": "Read more",
+    "backToHome": "Back to Home",
+    "send Message": "Send Message",
+    "sending": "Sending...",
+    "tryAgain": "Try Again",
+    "loading": "Loading..."
+  },
+  "nav": {
+    "solutions": "Solutions",
+    "services": "Services",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "hero": {
+    "badge": "23 years of enterprise IT excellence",
+    "headline": "Enterprise IT infrastructure, cybersecurity, and cloud.",
+    "tagline": "Discover your Alternative",
+    "subtitle": "NETCB delivers enterprise-grade infrastructure, cybersecurity, and digital transformation solutions across the African continent. Agile delivery. Measurable outcomes. Zero vendor lock-in.",
+    "ctaConsultation": "Book a Consultation",
+    "ctaSolutions": "Explore Solutions",
+    "scroll": "Scroll"
+  },
+  "home": {
+    "capabilitiesHeading": "End-to-end IT services built for enterprise.",
+    "capabilitiesSubtitle": "From infrastructure and platforms to tailored software and support — we deliver reliability you can trust across the African continent.",
+    "partnersHeading": "Powered by industry leaders",
+    "ctaHeading": "Let's build something extraordinary together.",
+    "ctaSubtitle": "Whether you need to harden your security posture, modernise your infrastructure, or break free from vendor lock-in — NETCB is the partner that gets it done.",
+    "ctaConsultation": "Book a Technical Consultation",
+    "ctaSolutions": "Explore Our Solutions"
+  },
+  "solutions": {
+    "title": "Robust, enterprise-grade capabilities.",
+    "subtitle": "From cybersecurity and hybrid cloud to digital workspaces and open source — NETCB delivers comprehensive, efficient, high-quality IT solutions for businesses across the African continent.",
+    "ctaHeading": "Not sure which solution fits?",
+    "ctaSubtitle": "Our technical team will assess your environment and recommend the right approach. No obligation, no sales pressure — just expert guidance.",
+    "ctaButton": "Book a Technical Consultation",
+    "discussButton": "Discuss Your Requirements",
+    "keyCapabilities": "Key Capabilities"
+  },
+  "services": {
+    "title": "Managed implementation, training & advisory.",
+    "subtitle": "NETCB delivers end-to-end IT services designed to streamline operations, reduce risk, and maximise business continuity and performance across your organisation.",
+    "ctaHeading": "Need a tailored solution?",
+    "ctaSubtitle": "Every enterprise is different. Let us understand your environment and design a service package that fits your exact requirements.",
+    "ctaButton": "Contact Our Team",
+    "enquireButton": "Enquire About This Service",
+    "whatsIncluded": "What's included"
+  },
+  "about": {
+    "title": "Specialist experts serving enterprise clients across Africa.",
+    "subtitle": "NETCB is an African technology partner built for the demands of large enterprises. We may be a small team, but we deliver with the strength, discipline, and reliability that big organisations require.",
+    "storyHeading": "Built for the demands of large enterprises.",
+    "valuesHeading": "What drives us",
+    "timelineHeading": "23 years of building trust",
+    "ctaHeading": "Ready to work with us?",
+    "ctaSubtitle": "Whether you need to modernise your infrastructure, harden your security posture, or break free from vendor lock-in — NETCB is the partner that gets it done.",
+    "ctaButton": "Get in Touch"
+  },
+  "contact": {
+    "title": "Let's explore how we can assist.",
+    "subtitle": "Whether you need a technical consultation, a proof of concept, or want to discuss a specific challenge — our team is ready to help.",
+    "getInTouch": "Get in touch",
+    "callUs": "Call us",
+    "emailUs": "Email us",
+    "visitUs": "Visit us",
+    "businessHours": "Business hours",
+    "directEmails": "Direct emails",
+    "sendMessage": "Send us a message",
+    "fullName": "Full name",
+    "email": "Email",
+    "company": "Company",
+    "phone": "Phone",
+    "subject": "Subject",
+    "message": "Message",
+    "selectTopic": "Select a topic",
+    "messageReceived": "Message received",
+    "thankYou": "Thank you for reaching out. A member of our team will respond within one business day.",
+    "sendAnother": "Send another message"
+  },
+  "footer": {
+    "description": "African technology partner built for the demands of large enterprises. Enterprise-grade infrastructure, cybersecurity, and digital transformation across the continent.",
+    "copyright": "All rights reserved."
+  },
+  "notFound": {
+    "title": "Page not found",
+    "subtitle": "The page you are looking for does not exist or has been moved. Let us get you back on track.",
+    "backToHome": "Back to Home",
+    "contactSupport": "Contact Support"
+  },
+  "error": {
+    "title": "Something went wrong",
+    "subtitle": "An unexpected error occurred while loading this page. Please try again or contact our support team if the problem persists."
+  }
+}

@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
+  <defs>
+    <linearGradient id="cyber-hero" x1="200" y1="0" x2="200" y2="300" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#00e5ff" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#00e5ff" stop-opacity="0.02"/>
+    </linearGradient>
+  </defs>
+  <!-- Large shield -->
+  <path d="M200 20 L340 80 L340 180 Q340 250 200 290 Q60 250 60 180 L60 80 Z" fill="url(#cyber-hero)" stroke="#00e5ff" stroke-opacity="0.2" stroke-width="1.5"/>
+  <path d="M200 50 L310 100 L310 180 Q310 230 200 265 Q90 230 90 180 L90 100 Z" fill="none" stroke="#00e5ff" stroke-opacity="0.1" stroke-width="1"/>
+  <!-- Lock -->
+  <rect x="170" y="140" width="60" height="48" rx="6" fill="#00e5ff" fill-opacity="0.08" stroke="#00e5ff" stroke-opacity="0.25" stroke-width="1.5"/>
+  <path d="M182 140 L182 120 Q182 100 200 100 Q218 100 218 120 L218 140" fill="none" stroke="#00e5ff" stroke-opacity="0.3" stroke-width="1.5"/>
+  <circle cx="200" cy="160" r="6" fill="#00e5ff" fill-opacity="0.3"/>
+  <line x1="200" y1="166" x2="200" y2="180" stroke="#00e5ff" stroke-opacity="0.3" stroke-width="2"/>
+  <!-- Scan lines -->
+  <line x1="80" y1="80" x2="320" y2="80" stroke="#00e5ff" stroke-opacity="0.06" stroke-width="0.5"/>
+  <line x1="70" y1="140" x2="330" y2="140" stroke="#00e5ff" stroke-opacity="0.06" stroke-width="0.5"/>
+  <line x1="80" y1="200" x2="320" y2="200" stroke="#00e5ff" stroke-opacity="0.06" stroke-width="0.5"/>
+  <!-- Floating data points -->
+  <circle cx="120" cy="60" r="2" fill="#00e5ff" fill-opacity="0.4"/>
+  <circle cx="280" cy="60" r="2" fill="#00e5ff" fill-opacity="0.4"/>
+  <circle cx="100" cy="200" r="1.5" fill="#00e5ff" fill-opacity="0.3"/>
+  <circle cx="300" cy="200" r="1.5" fill="#00e5ff" fill-opacity="0.3"/>
+</svg>
