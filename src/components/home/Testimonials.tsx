@@ -51,7 +51,7 @@ export function Testimonials() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
   const [direction, setDirection] = useState<"next" | "prev">("next");
-  const timeoutRef = useRef<NodeJS.Timeout>();
+  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const goTo = useCallback(
     (index: number, dir: "next" | "prev" = "next") => {
@@ -59,7 +59,7 @@ export function Testimonials() {
       setDirection(dir);
       setIsAnimating(true);
       setActiveIndex(index);
-      clearTimeout(timeoutRef.current);
+      clearTimeout(timeoutRef.current ?? undefined);
       timeoutRef.current = setTimeout(() => setIsAnimating(false), 600);
     },
     [isAnimating, activeIndex]
