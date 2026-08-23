@@ -90,4 +90,59 @@ export const partners: Partner[] = [
     tier: "Enterprise Middleware",
     logo: "/partners/rocket-software.svg",
   },
+  {
+    name: "AKB Technology",
+    tier: "IT Solutions",
+    logo: "/partners/akb-technology.svg",
+  },
+  {
+    name: "Arkna Analytics",
+    tier: "Analytics",
+    logo: "/partners/arkna-analytics.svg",
+  },
+  {
+    name: "CyberGuard Africa",
+    tier: "Cybersecurity",
+    logo: "/partners/cyberguard-africa.svg",
+  },
+  {
+    name: "Finsys Group",
+    tier: "Financial Systems",
+    logo: "/partners/finsys-group.svg",
+  },
+  {
+    name: "Infocentury Solutions",
+    tier: "IT Infrastructure",
+    logo: "/partners/infocentury-solutions.svg",
+  },
+  {
+    name: "Learn IT By Tests",
+    tier: "Training",
+    logo: "/partners/learn-it-by-tests.svg",
+  },
+  {
+    name: "Ndende Technologies",
+    tier: "IT Services",
+    logo: "/partners/ndende-technologies.svg",
+  },
+  {
+    name: "PC-Net",
+    tier: "IT Solutions",
+    logo: "/partners/pc-net.svg",
+  },
+  {
+    name: "Quantum Solutions",
+    tier: "Enterprise IT",
+    logo: "/partners/quantum-solutions.svg",
+  },
+  {
+    name: "Vessel Systems",
+    tier: "Marine IT",
+    logo: "/partners/vessel-systems.svg",
+  },
+  {
+    name: "Vuxeni IT",
+    tier: "IT Services",
+    logo: "/partners/vuxeni-it.svg",
+  },
 ];
