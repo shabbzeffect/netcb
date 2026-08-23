@@ -18,8 +18,8 @@ export default function Home() {
         {/* Hero Carousel */}
         <HeroCarousel />
 
-        {/* Hero pattern overlay */}
-        <div className="absolute inset-0 opacity-40 z-[4]">
+        {/* Hero pattern overlay - silhouette & stars */}
+        <div className="absolute inset-0 opacity-60 z-[5] mix-blend-screen">
           <Image src="/illustrations/hero-pattern.svg" alt="" fill className="object-cover" priority />
         </div>
 
