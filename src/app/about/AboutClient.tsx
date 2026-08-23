@@ -13,91 +13,109 @@ const team = [
     name: "Cobus Burgers",
     image: "/team/cobus.png",
     role: "Founder & Managing Director",
+    linkedin: "https://www.linkedin.com/in/cobus-burgers/",
   },
   {
     name: "Jan du Toit",
     image: "/team/jan.png",
     role: "Chief Financial Officer",
+    linkedin: "https://www.linkedin.com/in/jan-du-toit/",
   },
   {
     name: "Keith Chatsauka",
     image: "/team/keith.png",
     role: "Director: Cyberlaw, Compliance & Cybersecurity",
+    linkedin: "https://www.linkedin.com/in/keith-chatsauka/",
   },
   {
     name: "Lumko Ndzala",
     image: "/team/lumko.png",
     role: "Head of Marketing & Account Executive",
+    linkedin: "https://www.linkedin.com/in/lumko-ndzala/",
   },
   {
     name: "Marlene van Zyl",
     image: "/team/marlene.png",
     role: "Sales Business Unit Manager",
+    linkedin: "https://www.linkedin.com/in/marlene-van-zyl/",
   },
   {
     name: "Matthew Garzancich",
     image: "/team/matthew.png",
     role: "Partner Manager & Account Executive",
+    linkedin: "https://www.linkedin.com/in/matthew-garzancich/",
   },
   {
     name: "Kleins Agwanda",
     image: "/team/kleins.png",
     role: "Regional Manager: East Africa",
+    linkedin: "https://www.linkedin.com/in/kleins-agwanda/",
   },
   {
     name: "Kobus Bennemeer",
     image: "/team/kobus.png",
     role: "Team Leader: System Engineers",
+    linkedin: "https://www.linkedin.com/in/kobus-bennemeer/",
   },
   {
     name: "Siphephelo Buthelezi",
     image: "/team/siphephelo.png",
     role: "Team Leader: Software Developers",
+    linkedin: "https://www.linkedin.com/in/siphephelo-buthelezi/",
   },
   {
     name: "Christopher Katranas",
     image: "/team/christopher.png",
     role: "Software Developer",
+    linkedin: "https://www.linkedin.com/in/christopher-katranas/",
   },
   {
     name: "JP Breugem",
     image: "/team/jp.png",
     role: "Systems Specialist",
+    linkedin: "https://www.linkedin.com/in/jp-breugem/",
   },
   {
     name: "Koketso Mathole",
     image: "/team/koketso.png",
     role: "Software Developer",
+    linkedin: "https://www.linkedin.com/in/koketso-mathole/",
   },
   {
     name: "Lesego Molete",
     image: "/team/lesego.png",
     role: "Software Developer",
+    linkedin: "https://www.linkedin.com/in/lesego-molete/",
   },
   {
     name: "Mickey Mseleko",
     image: "/team/mickey.png",
     role: "Systems Specialist",
+    linkedin: "https://www.linkedin.com/in/mickey-mseleko/",
   },
   {
     name: "Paul Laubscher",
     image: "/team/paul.png",
     role: "Systems Engineer",
+    linkedin: "https://www.linkedin.com/in/paul-laubscher/",
   },
   {
     name: "Trabelsie Taunyane",
     image: "/team/trabelsie.png",
     role: "Personal Assistant to the MD & Legal Advisor",
+    linkedin: "https://www.linkedin.com/in/trabelsie-taunyane/",
   },
   {
     name: "Wellington Nadisa",
     image: "/team/wellington.png",
     role: "Service Desk Manager & Business Consultant",
+    linkedin: "https://www.linkedin.com/in/wellington-nadisa/",
   },
   {
     name: "Shabir Wangara",
     image: "/team/shabir.jpg",
     role: "Systems Engineer",
+    linkedin: "https://www.linkedin.com/in/shabir-wangara/",
   },
 ];
 
@@ -567,15 +585,22 @@ export function AboutPageClient() {
       </section>
 
       {/* Team */}
-      <section className="relative py-24 border-t border-[var(--netcb-border)]">
-        <div className="absolute inset-0">
-          <img src="/about/team-section.jpg" alt="" className="w-full h-full object-cover opacity-20" />
-          <div className="absolute inset-0 bg-gradient-to-b from-[var(--netcb-base)]/90 to-[var(--netcb-base)]/95" />
+      <section className="relative py-20 sm:py-28 border-t border-[var(--netcb-border)] overflow-hidden">
+        {/* Background decorative elements */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-20 left-1/4 w-64 h-64 bg-[var(--netcb-accent)]/5 blur-[100px] rounded-full" />
+          <div className="absolute bottom-20 right-1/4 w-64 h-64 bg-[var(--netcb-accent-2)]/5 blur-[100px] rounded-full" />
+          <img src="/about/team-section.jpg" alt="" className="absolute inset-0 w-full h-full object-cover opacity-10" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[var(--netcb-base)]/95 via-[var(--netcb-base)]/90 to-[var(--netcb-base)]/95" />
         </div>
+
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection>
-            <div className="text-center mb-16">
-              <h2 className="text-3xl font-bold font-[var(--font-display)] text-[var(--netcb-text)]">
+            <div className="text-center mb-12 sm:mb-16">
+              <span className="inline-block text-xs font-[var(--font-mono)] text-[var(--netcb-accent)] uppercase tracking-widest mb-4">
+                Our Team
+              </span>
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold font-[var(--font-display)] text-[var(--netcb-text)]">
                 The people behind the platform
               </h2>
               <p className="text-[var(--netcb-text-muted)] mt-4 max-w-2xl mx-auto">
@@ -584,35 +609,135 @@ export function AboutPageClient() {
             </div>
           </AnimatedSection>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
-            {team.map((member, i) => (
-              <AnimatedSection key={member.name} delay={i * 60}>
-                <div className="glass rounded-2xl p-5 h-full text-center hover:glass-elevated transition-all duration-300 group">
+          {/* Leadership row */}
+          <AnimatedSection delay={100}>
+            <div className="mb-12">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="h-px flex-1 bg-gradient-to-r from-transparent to-[var(--netcb-border)]" />
+                <span className="text-xs font-[var(--font-mono)] text-[var(--netcb-text-muted)] uppercase tracking-wider">Leadership</span>
+                <div className="h-px flex-1 bg-gradient-to-l from-transparent to-[var(--netcb-border)]" />
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                {team.slice(0, 3).map((member, i) => (
+                  <div
+                    key={member.name}
+                    className="glass rounded-2xl p-6 hover:glass-elevated transition-all duration-500 group border border-transparent hover:border-[var(--netcb-accent)]/20 hover:shadow-[0_0_30px_rgba(0,229,255,0.1)]"
+                    style={{ animationDelay: `${i * 100}ms` }}
+                  >
+                    <div className="flex items-center gap-4">
+                      {member.image ? (
+                        <div className="relative">
+                          <div className="w-16 h-16 rounded-2xl overflow-hidden shadow-lg shadow-[var(--netcb-accent)]/20 group-hover:shadow-[var(--netcb-accent)]/40 transition-all duration-500 group-hover:scale-105">
+                            <Image
+                              src={member.image}
+                              alt={member.name}
+                              width={64}
+                              height={64}
+                              className="w-full h-full object-cover"
+                            />
+                          </div>
+                          <div className="absolute -bottom-1 -right-1 w-4 h-4 rounded-full bg-[var(--netcb-success)] border-2 border-[var(--netcb-base)]" />
+                        </div>
+                      ) : (
+                        <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[var(--netcb-accent)] to-[var(--netcb-accent-2)] flex items-center justify-center text-[var(--netcb-base)] font-bold text-lg shadow-lg shadow-[var(--netcb-accent)]/20 group-hover:scale-105 transition-transform">
+                          {member.name.split(' ').map(n => n[0]).join('').slice(0, 2)}
+                        </div>
+                      )}
+                      <div className="flex-1 min-w-0">
+                        <h3 className="font-[var(--font-display)] font-semibold text-[var(--netcb-text)] mb-1 truncate">
+                          {member.name}
+                        </h3>
+                        <p className="text-xs font-[var(--font-mono)] text-[var(--netcb-accent)] uppercase tracking-wider leading-snug truncate">
+                          {member.role}
+                        </p>
+                        {member.linkedin && (
+                          <a
+                            href={member.linkedin}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1.5 mt-2 text-xs text-[var(--netcb-text-muted)] hover:text-[var(--netcb-accent)] transition-colors"
+                          >
+                            <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
+                              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                            </svg>
+                            LinkedIn
+                          </a>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </AnimatedSection>
+
+          {/* Team grid */}
+          <AnimatedSection delay={200}>
+            <div className="flex items-center gap-3 mb-6">
+              <div className="h-px flex-1 bg-gradient-to-r from-transparent to-[var(--netcb-border)]" />
+              <span className="text-xs font-[var(--font-mono)] text-[var(--netcb-text-muted)] uppercase tracking-wider">Team</span>
+              <div className="h-px flex-1 bg-gradient-to-l from-transparent to-[var(--netcb-border)]" />
+            </div>
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+              {team.slice(3).map((member, i) => (
+                <div
+                  key={member.name}
+                  className="glass rounded-xl p-4 h-full text-center hover:glass-elevated transition-all duration-500 group border border-transparent hover:border-[var(--netcb-accent)]/20 hover:shadow-[0_0_20px_rgba(0,229,255,0.08)]"
+                  style={{ animationDelay: `${(i + 3) * 60}ms` }}
+                >
                   {member.image ? (
-                    <div className="w-20 h-20 rounded-full overflow-hidden mx-auto mb-3 shadow-lg shadow-[var(--netcb-accent)]/20 group-hover:scale-105 transition-transform">
-                      <Image
-                        src={member.image}
-                        alt={member.name}
-                        width={80}
-                        height={80}
-                        className="w-full h-full object-cover"
-                      />
+                    <div className="relative mx-auto mb-3">
+                      <div className="w-16 h-16 rounded-xl overflow-hidden mx-auto shadow-lg shadow-[var(--netcb-accent)]/10 group-hover:shadow-[var(--netcb-accent)]/30 transition-all duration-500 group-hover:scale-105">
+                        <Image
+                          src={member.image}
+                          alt={member.name}
+                          width={64}
+                          height={64}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                      <div className="absolute -bottom-0.5 left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-[var(--netcb-success)] border-2 border-[var(--netcb-base)]" />
                     </div>
                   ) : (
-                    <div className="w-20 h-20 rounded-full bg-gradient-to-br from-[var(--netcb-accent)] to-[var(--netcb-accent-2)] flex items-center justify-center text-[var(--netcb-base)] font-bold text-xl mx-auto mb-3 shadow-lg shadow-[var(--netcb-accent)]/20 group-hover:scale-105 transition-transform">
+                    <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-[var(--netcb-accent)] to-[var(--netcb-accent-2)] flex items-center justify-center text-[var(--netcb-base)] font-bold text-base mx-auto mb-3 shadow-lg shadow-[var(--netcb-accent)]/10 group-hover:scale-105 transition-transform">
                       {member.name.split(' ').map(n => n[0]).join('').slice(0, 2)}
                     </div>
                   )}
-                  <h3 className="font-[var(--font-display)] font-semibold text-[var(--netcb-text)] mb-1 text-sm">
+                  <h3 className="font-[var(--font-display)] font-semibold text-[var(--netcb-text)] mb-1 text-sm truncate">
                     {member.name}
                   </h3>
-                  <p className="text-[11px] font-[var(--font-mono)] text-[var(--netcb-accent)] uppercase tracking-wider leading-snug">
+                  <p className="text-[10px] font-[var(--font-mono)] text-[var(--netcb-accent)] uppercase tracking-wider leading-snug truncate">
                     {member.role}
                   </p>
+                  {member.linkedin && (
+                    <a
+                      href={member.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center mt-2 p-1.5 rounded-lg text-[var(--netcb-text-muted)] hover:text-[var(--netcb-accent)] hover:bg-[var(--netcb-accent)]/10 transition-all"
+                      aria-label={`${member.name} LinkedIn`}
+                    >
+                      <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                      </svg>
+                    </a>
+                  )}
                 </div>
-              </AnimatedSection>
-            ))}
-          </div>
+              ))}
+            </div>
+          </AnimatedSection>
+
+          {/* Team count */}
+          <AnimatedSection delay={300}>
+            <div className="mt-8 text-center">
+              <div className="inline-flex items-center gap-3 px-5 py-2.5 glass rounded-full">
+                <div className="w-2 h-2 rounded-full bg-[var(--netcb-success)] animate-pulse" />
+                <span className="text-sm text-[var(--netcb-text-muted)]">
+                  <span className="text-[var(--netcb-accent)] font-semibold">{team.length}</span> team members strong
+                </span>
+              </div>
+            </div>
+          </AnimatedSection>
         </div>
       </section>
 
