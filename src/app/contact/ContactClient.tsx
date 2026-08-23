@@ -76,7 +76,7 @@ export function ContactPageClient() {
   return (
     <>
       {/* Hero */}
-      <section className="relative pt-32 pb-20 overflow-hidden">
+      <section className="relative pt-32 pb-16 sm:pb-20 overflow-hidden">
         <div className="absolute inset-0">
           <img src="/contact/contact-hero.jpg" alt="" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-r from-[var(--netcb-base)]/95 via-[var(--netcb-base)]/80 to-[var(--netcb-base)]/60" />
@@ -86,12 +86,15 @@ export function ContactPageClient() {
         </div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold font-[var(--font-display)] text-[var(--netcb-text)] mb-6 leading-tight">
+            <span className="inline-block text-xs font-[var(--font-mono)] text-[var(--netcb-accent)] uppercase tracking-widest mb-4">
+              Contact Us
+            </span>
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold font-[var(--font-display)] text-[var(--netcb-text)] mb-4 sm:mb-6 leading-tight">
               Let&apos;s explore how
               <br />
               <span className="text-accent">we can assist.</span>
             </h1>
-            <p className="text-lg text-[var(--netcb-text-muted)] max-w-2xl leading-relaxed">
+            <p className="text-base sm:text-lg text-[var(--netcb-text-muted)] max-w-2xl leading-relaxed">
               Whether you need a technical consultation, a proof of concept, or
               want to discuss a specific challenge — our team is ready to help.
             </p>
@@ -100,18 +103,21 @@ export function ContactPageClient() {
       </section>
 
       {/* Contact Section */}
-      <section className="relative pb-24">
+      <section className="relative py-12 sm:py-16 lg:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16">
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 sm:gap-12 lg:gap-16">
             {/* Contact Info */}
             <div className="lg:col-span-2">
               <AnimatedSection>
-                <div className="space-y-8">
+                <div className="space-y-6 sm:space-y-8">
                   <div>
-                    <h2 className="text-2xl font-bold font-[var(--font-display)] text-[var(--netcb-text)] mb-6">
+                    <span className="inline-block text-xs font-[var(--font-mono)] text-[var(--netcb-accent)] uppercase tracking-widest mb-4">
+                      Reach Out
+                    </span>
+                    <h2 className="text-2xl sm:text-3xl font-bold font-[var(--font-display)] text-[var(--netcb-text)] mb-6">
                       Get in touch
                     </h2>
-                    <div className="space-y-4">
+                    <div className="space-y-3 sm:space-y-4">
                       <div className="p-4 glass rounded-xl">
                         <div className="flex items-center gap-3 mb-3">
                           <div className="w-10 h-10 rounded-lg bg-[var(--netcb-accent-dim)] flex items-center justify-center text-[var(--netcb-accent)]">

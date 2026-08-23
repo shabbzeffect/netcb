@@ -337,11 +337,17 @@ export function AboutPageClient() {
       </section>
 
       {/* Story */}
-      <section className="relative py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+      <section className="relative py-20 sm:py-28 overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-1/2 right-0 w-[400px] h-[400px] bg-[var(--netcb-accent)]/5 blur-[120px] rounded-full" />
+        </div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
             <AnimatedSection>
-              <h2 className="text-3xl font-bold font-[var(--font-display)] text-[var(--netcb-text)] mb-6">
+              <span className="inline-block text-xs font-[var(--font-mono)] text-[var(--netcb-accent)] uppercase tracking-widest mb-4">
+                Our Story
+              </span>
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold font-[var(--font-display)] text-[var(--netcb-text)] mb-6 leading-tight">
                 Built for the demands of
                 <br />large enterprises.
               </h2>
@@ -375,16 +381,19 @@ export function AboutPageClient() {
             </AnimatedSection>
 
             <AnimatedSection delay={200}>
-              <div className="glass rounded-2xl p-8">
+              <div className="glass rounded-2xl p-6 sm:p-8 border border-[var(--netcb-border)]">
                 <div className="flex items-center gap-4 mb-6">
-                  <div className="w-14 h-14 rounded-full overflow-hidden shadow-lg shadow-[var(--netcb-accent)]/20">
-                    <Image
-                      src="/team/cobus.png"
-                      alt="Cobus Burgers"
-                      width={56}
-                      height={56}
-                      className="w-full h-full object-cover"
-                    />
+                  <div className="relative">
+                    <div className="w-16 h-16 rounded-2xl overflow-hidden shadow-lg shadow-[var(--netcb-accent)]/20">
+                      <Image
+                        src="/team/cobus.png"
+                        alt="Cobus Burgers"
+                        width={64}
+                        height={64}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <div className="absolute -bottom-1 -right-1 w-4 h-4 rounded-full bg-[var(--netcb-success)] border-2 border-[var(--netcb-base)]" />
                   </div>
                   <div>
                     <div className="font-[var(--font-display)] font-semibold text-[var(--netcb-text)]">
@@ -399,11 +408,24 @@ export function AboutPageClient() {
                   23 years building enterprise IT across Africa. Hands-on leadership
                   with deep infrastructure and security expertise.
                 </p>
-                <div className="mt-6 pt-6 border-t border-[var(--netcb-border)]">
+                <div className="mt-6 pt-6 border-t border-[var(--netcb-border)] flex items-center gap-4">
                   <div className="flex items-center gap-2 text-xs font-[var(--font-mono)] text-[var(--netcb-text-muted)]">
                     <MapPin className="w-3.5 h-3.5 text-[var(--netcb-accent)]" />
                     Pretoria, Gauteng, South Africa
                   </div>
+                  {team[0].linkedin && (
+                    <a
+                      href={team[0].linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-1.5 text-xs text-[var(--netcb-text-muted)] hover:text-[var(--netcb-accent)] transition-colors"
+                    >
+                      <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                      </svg>
+                      LinkedIn
+                    </a>
+                  )}
                 </div>
               </div>
             </AnimatedSection>
@@ -412,26 +434,27 @@ export function AboutPageClient() {
       </section>
 
       {/* Vision & Mission */}
-      <section className="relative py-24 border-t border-[var(--netcb-border)]">
+      <section className="relative py-20 sm:py-28 border-t border-[var(--netcb-border)]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection>
-            <div className="text-center mb-16">
+            <div className="text-center mb-12 sm:mb-16">
               <span className="inline-block text-xs font-[var(--font-mono)] text-[var(--netcb-accent)] uppercase tracking-widest mb-4">
                 Leading edge, agile and innovative
               </span>
-              <h2 className="text-3xl font-bold font-[var(--font-display)] text-[var(--netcb-text)]">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold font-[var(--font-display)] text-[var(--netcb-text)]">
                 Our Vision & Mission
               </h2>
             </div>
           </AnimatedSection>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 sm:gap-6 max-w-5xl mx-auto">
             <AnimatedSection delay={100}>
-              <div className="glass-elevated rounded-2xl p-8 sm:p-10 h-full relative overflow-hidden group hover:border-[var(--netcb-accent)]/30 transition-all duration-300">
+              <div className="glass-elevated rounded-2xl p-6 sm:p-8 lg:p-10 h-full relative overflow-hidden group hover:border-[var(--netcb-accent)]/30 transition-all duration-500">
                 <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-bl from-[var(--netcb-accent)]/8 to-transparent rounded-bl-full transition-all duration-500 group-hover:w-48 group-hover:h-48" />
+                <div className="absolute bottom-0 left-0 w-32 h-32 bg-gradient-to-tr from-[var(--netcb-accent)]/5 to-transparent rounded-tr-full" />
                 <div className="relative">
-                  <div className="w-12 h-12 rounded-xl bg-[var(--netcb-accent-dim)] flex items-center justify-center mb-6 group-hover:bg-[var(--netcb-accent)]/20 transition-colors">
-                    <Eye className="w-6 h-6 text-[var(--netcb-accent)]" />
+                  <div className="w-14 h-14 rounded-xl bg-[var(--netcb-accent-dim)] flex items-center justify-center mb-6 group-hover:bg-[var(--netcb-accent)]/20 group-hover:scale-110 transition-all duration-500">
+                    <Eye className="w-7 h-7 text-[var(--netcb-accent)]" />
                   </div>
                   <h3 className="text-xl font-[var(--font-display)] font-bold text-[var(--netcb-text)] mb-4">
                     Our Vision
@@ -445,11 +468,12 @@ export function AboutPageClient() {
             </AnimatedSection>
 
             <AnimatedSection delay={200}>
-              <div className="glass-elevated rounded-2xl p-8 sm:p-10 h-full relative overflow-hidden group hover:border-[var(--netcb-accent)]/30 transition-all duration-300">
+              <div className="glass-elevated rounded-2xl p-6 sm:p-8 lg:p-10 h-full relative overflow-hidden group hover:border-[var(--netcb-accent)]/30 transition-all duration-500">
                 <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-bl from-[var(--netcb-accent-2)]/8 to-transparent rounded-bl-full transition-all duration-500 group-hover:w-48 group-hover:h-48" />
+                <div className="absolute bottom-0 left-0 w-32 h-32 bg-gradient-to-tr from-[var(--netcb-accent-2)]/5 to-transparent rounded-tr-full" />
                 <div className="relative">
-                  <div className="w-12 h-12 rounded-xl bg-[var(--netcb-accent-dim)] flex items-center justify-center mb-6 group-hover:bg-[var(--netcb-accent)]/20 transition-colors">
-                    <Target className="w-6 h-6 text-[var(--netcb-accent)]" />
+                  <div className="w-14 h-14 rounded-xl bg-[var(--netcb-accent-dim)] flex items-center justify-center mb-6 group-hover:bg-[var(--netcb-accent)]/20 group-hover:scale-110 transition-all duration-500">
+                    <Target className="w-7 h-7 text-[var(--netcb-accent)]" />
                   </div>
                   <h3 className="text-xl font-[var(--font-display)] font-bold text-[var(--netcb-text)] mb-4">
                     Our Mission
@@ -468,39 +492,42 @@ export function AboutPageClient() {
       </section>
 
       {/* Word from Managing Director */}
-      <section className="relative py-24 border-t border-[var(--netcb-border)]">
+      <section className="relative py-20 sm:py-28 border-t border-[var(--netcb-border)] overflow-hidden">
         <div className="absolute inset-0">
-          <img src="/about/md-message.jpg" alt="" className="w-full h-full object-cover opacity-30" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[var(--netcb-base)]/95 via-[var(--netcb-base)]/80 to-[var(--netcb-base)]/60" />
+          <img src="/about/md-message.jpg" alt="" className="w-full h-full object-cover opacity-20" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[var(--netcb-base)]/95 via-[var(--netcb-base)]/85 to-[var(--netcb-base)]/70" />
         </div>
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection>
-            <div className="text-center mb-12">
+            <div className="text-center mb-10 sm:mb-12">
               <span className="inline-block text-xs font-[var(--font-mono)] text-[var(--netcb-accent)] uppercase tracking-widest mb-4">
                 A word from our Managing Director
               </span>
-              <h2 className="text-3xl font-bold font-[var(--font-display)] text-[var(--netcb-text)]">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold font-[var(--font-display)] text-[var(--netcb-text)]">
                 Leading NETCB into the future
               </h2>
             </div>
           </AnimatedSection>
 
           <AnimatedSection delay={100}>
-            <div className="glass-elevated rounded-2xl p-8 sm:p-12 relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-[var(--netcb-accent)]/10 to-transparent rounded-bl-full" />
+            <div className="glass-elevated rounded-2xl p-6 sm:p-8 lg:p-12 relative overflow-hidden border border-[var(--netcb-border-bright)]">
+              <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-bl from-[var(--netcb-accent)]/10 to-transparent rounded-bl-full" />
 
               <div className="flex items-center gap-5 mb-8">
-                <div className="flex-shrink-0 w-16 h-16 rounded-full overflow-hidden shadow-lg shadow-[var(--netcb-accent)]/20">
-                  <Image
-                    src="/team/cobus.png"
-                    alt="Cobus Burgers"
-                    width={64}
-                    height={64}
-                    className="w-full h-full object-cover"
-                  />
+                <div className="relative flex-shrink-0">
+                  <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl overflow-hidden shadow-lg shadow-[var(--netcb-accent)]/20">
+                    <Image
+                      src="/team/cobus.png"
+                      alt="Cobus Burgers"
+                      width={80}
+                      height={80}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="absolute -bottom-1 -right-1 w-5 h-5 rounded-full bg-[var(--netcb-success)] border-2 border-[var(--netcb-base)]" />
                 </div>
                 <div>
-                  <div className="font-[var(--font-display)] font-semibold text-lg text-[var(--netcb-text)]">
+                  <div className="font-[var(--font-display)] font-semibold text-lg sm:text-xl text-[var(--netcb-text)]">
                     Cobus Burgers
                   </div>
                   <div className="text-sm font-[var(--font-mono)] text-[var(--netcb-accent)]">
@@ -509,7 +536,7 @@ export function AboutPageClient() {
                 </div>
               </div>
 
-              <div className="space-y-5 text-[var(--netcb-text-muted)] leading-relaxed">
+              <div className="space-y-4 sm:space-y-5 text-[var(--netcb-text-muted)] leading-relaxed">
                 <p>
                   Since 2020, the way we work has changed a lot. Businesses now have
                   to adjust all the time — to new technology, new security risks, and
@@ -544,11 +571,24 @@ export function AboutPageClient() {
                 </p>
               </div>
 
-              <div className="mt-8 pt-6 border-t border-[var(--netcb-border)] flex items-center gap-4">
+              <div className="mt-8 pt-6 border-t border-[var(--netcb-border)] flex flex-wrap items-center gap-4 sm:gap-6">
                 <div className="flex items-center gap-2 text-xs font-[var(--font-mono)] text-[var(--netcb-text-muted)]">
                   <MapPin className="w-3.5 h-3.5 text-[var(--netcb-accent)]" />
                   Pretoria, Gauteng, South Africa
                 </div>
+                {team[0].linkedin && (
+                  <a
+                    href={team[0].linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-1.5 text-xs text-[var(--netcb-text-muted)] hover:text-[var(--netcb-accent)] transition-colors"
+                  >
+                    <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                    </svg>
+                    LinkedIn
+                  </a>
+                )}
               </div>
             </div>
           </AnimatedSection>
@@ -556,27 +596,35 @@ export function AboutPageClient() {
       </section>
 
       {/* Values */}
-      <section className="relative py-24 border-t border-[var(--netcb-border)]">
+      <section className="relative py-20 sm:py-28 border-t border-[var(--netcb-border)]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection>
-            <div className="text-center mb-16">
-              <h2 className="text-3xl font-bold font-[var(--font-display)] text-[var(--netcb-text)]">
+            <div className="text-center mb-12 sm:mb-16">
+              <span className="inline-block text-xs font-[var(--font-mono)] text-[var(--netcb-accent)] uppercase tracking-widest mb-4">
+                Our Values
+              </span>
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold font-[var(--font-display)] text-[var(--netcb-text)]">
                 What drives us
               </h2>
             </div>
           </AnimatedSection>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
             {values.map((value, i) => (
               <AnimatedSection key={value.title} delay={i * 100}>
-                <div className="glass rounded-2xl p-6 h-full hover:glass-elevated transition-all duration-300">
-                  <value.icon className="w-8 h-8 text-[var(--netcb-accent)] mb-4" />
-                  <h3 className="font-[var(--font-display)] font-semibold text-[var(--netcb-text)] mb-2">
-                    {value.title}
-                  </h3>
-                  <p className="text-sm text-[var(--netcb-text-muted)] leading-relaxed">
-                    {value.description}
-                  </p>
+                <div className="group glass rounded-2xl p-5 sm:p-6 h-full hover:glass-elevated transition-all duration-500 border border-transparent hover:border-[var(--netcb-accent)]/20 relative overflow-hidden">
+                  <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-24 bg-[var(--netcb-accent)] rounded-full blur-[60px] opacity-0 group-hover:opacity-[0.06] transition-opacity duration-500" />
+                  <div className="relative">
+                    <div className="w-12 h-12 rounded-xl bg-[var(--netcb-accent)]/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-500">
+                      <value.icon className="w-6 h-6 text-[var(--netcb-accent)]" />
+                    </div>
+                    <h3 className="text-base sm:text-lg font-[var(--font-display)] font-semibold text-[var(--netcb-text)] mb-2 group-hover:text-[var(--netcb-accent)] transition-colors">
+                      {value.title}
+                    </h3>
+                    <p className="text-sm text-[var(--netcb-text-muted)] leading-relaxed">
+                      {value.description}
+                    </p>
+                  </div>
                 </div>
               </AnimatedSection>
             ))}
