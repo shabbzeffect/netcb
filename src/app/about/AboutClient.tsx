@@ -5,7 +5,7 @@ import { AnimatedSection } from "@/components/shared/AnimatedSection";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { Card3D } from "@/components/ui/Card3D";
 import { Target, Heart, Shield, Users, Award, MapPin, Cloud, Monitor, Server, Play, Eye, ChevronDown, Calendar, BookOpen } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 
 const team = [
@@ -138,6 +138,17 @@ const timeline = [
 export function AboutPageClient() {
   const [eventsOpen, setEventsOpen] = useState(false);
   const [eventsHover, setEventsHover] = useState(false);
+  const eventsRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    function handleClickOutside(e: MouseEvent) {
+      if (eventsRef.current && !eventsRef.current.contains(e.target as Node)) {
+        setEventsOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   return (
     <>
@@ -176,6 +187,7 @@ export function AboutPageClient() {
             <div className="flex items-center justify-center gap-4 flex-wrap">
               {/* Events Dropdown */}
               <div
+                ref={eventsRef}
                 className="relative"
                 onMouseEnter={() => setEventsHover(true)}
                 onMouseLeave={() => setEventsHover(false)}
@@ -192,6 +204,7 @@ export function AboutPageClient() {
                   <div className="absolute top-full left-0 mt-2 w-56 glass-elevated rounded-xl p-1.5 shadow-2xl shadow-black/40 animate-dropdown border border-[var(--netcb-border-bright)] z-20">
                     <Link
                       href="/about/events/upcoming"
+                      onClick={() => setEventsOpen(false)}
                       className="flex items-center gap-3 px-4 py-2.5 rounded-lg text-sm text-[var(--netcb-text-muted)] hover:text-[var(--netcb-text)] hover:bg-[var(--netcb-accent-dim)] transition-all group"
                     >
                       <div className="w-8 h-8 rounded-lg bg-[var(--netcb-accent-dim)] flex items-center justify-center group-hover:bg-[var(--netcb-accent)] transition-colors">
@@ -201,6 +214,7 @@ export function AboutPageClient() {
                     </Link>
                     <Link
                       href="/about/events/past"
+                      onClick={() => setEventsOpen(false)}
                       className="flex items-center gap-3 px-4 py-2.5 rounded-lg text-sm text-[var(--netcb-text-muted)] hover:text-[var(--netcb-text)] hover:bg-[var(--netcb-accent-dim)] transition-all group"
                     >
                       <div className="w-8 h-8 rounded-lg bg-[var(--netcb-accent-dim)] flex items-center justify-center group-hover:bg-[var(--netcb-accent)] transition-colors">
