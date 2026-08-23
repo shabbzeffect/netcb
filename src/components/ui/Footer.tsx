@@ -49,7 +49,7 @@ export function Footer() {
       <div className="glow-line" />
 
       {/* Main Footer */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 lg:gap-12">
           {/* Brand */}
           <div className="col-span-2">
@@ -68,22 +68,22 @@ export function Footer() {
               Enterprise-grade infrastructure, cybersecurity, and digital transformation
               across the continent.
             </p>
-            <div className="space-y-2">
+            <div className="space-y-3">
               <a
                 href={`tel:${company.contact.phone.replace(/\s/g, "")}`}
-                className="flex items-center gap-2 text-sm text-[var(--netcb-text-muted)] hover:text-[var(--netcb-accent)] transition-colors"
+                className="flex items-center gap-2 text-sm text-[var(--netcb-text-muted)] hover:text-[var(--netcb-accent)] transition-colors py-1"
               >
                 <Phone className="w-4 h-4" />
                 {company.contact.phone}
               </a>
               <a
                 href={`mailto:${company.contact.email}`}
-                className="flex items-center gap-2 text-sm text-[var(--netcb-text-muted)] hover:text-[var(--netcb-accent)] transition-colors"
+                className="flex items-center gap-2 text-sm text-[var(--netcb-text-muted)] hover:text-[var(--netcb-accent)] transition-colors py-1"
               >
                 <Mail className="w-4 h-4" />
                 {company.contact.email}
               </a>
-              <div className="flex items-center gap-2 text-sm text-[var(--netcb-text-muted)]">
+              <div className="flex items-center gap-2 text-sm text-[var(--netcb-text-muted)] py-1">
                 <MapPin className="w-4 h-4 flex-shrink-0" />
                 {company.headquarters.address}
               </div>
@@ -96,12 +96,12 @@ export function Footer() {
               <h3 className="text-xs font-semibold uppercase tracking-[0.15em] text-[var(--netcb-text)] mb-4 font-[var(--font-display)]">
                 {category}
               </h3>
-              <ul className="space-y-2.5" role="list">
+              <ul className="space-y-1" role="list">
                 {links.map((link) => (
                   <li key={link.name}>
                     <Link
                       href={link.href}
-                      className="text-sm text-[var(--netcb-text-muted)] hover:text-[var(--netcb-accent)] transition-colors"
+                      className="inline-block text-sm text-[var(--netcb-text-muted)] hover:text-[var(--netcb-accent)] transition-colors py-1.5 px-1 -mx-1 min-h-[44px] sm:min-h-0 leading-normal"
                     >
                       {link.name}
                     </Link>

@@ -5,14 +5,21 @@ import { ArrowUp } from "lucide-react";
 
 export function BackToTop() {
   const [visible, setVisible] = useState(false);
+  const [nearFooter, setNearFooter] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setVisible(window.scrollY > 400);
+    const onScroll = () => {
+      setVisible(window.scrollY > 400);
+      // Hide when near footer to avoid overlapping
+      const scrollBottom = window.scrollY + window.innerHeight;
+      const docHeight = document.documentElement.scrollHeight;
+      setNearFooter(docHeight - scrollBottom < 200);
+    };
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  if (!visible) return null;
+  if (!visible || nearFooter) return null;
 
   return (
     <button
