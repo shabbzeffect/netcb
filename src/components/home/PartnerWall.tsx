@@ -11,7 +11,7 @@ function PartnerLogo({ name, logo }: { name: string; logo: string }) {
     <img
       src={logo}
       alt={`${name} logo`}
-      className="h-8 w-auto brightness-0 invert opacity-70 group-hover:opacity-100 transition-opacity duration-300"
+      className="h-6 sm:h-8 w-auto brightness-0 invert opacity-60 group-hover:opacity-100 transition-all duration-500 group-hover:scale-110"
       loading="lazy"
     />
   );
@@ -40,12 +40,12 @@ export function PartnerWall() {
     return () => el.removeEventListener("scroll", checkScroll);
   }, [checkScroll]);
 
-  // Auto-scroll animation
+  // Auto-scroll
   useEffect(() => {
     const el = scrollRef.current;
     if (!el) return;
 
-    const speed = 0.5; // px per frame
+    const speed = 0.5;
 
     const animate = (time: number) => {
       if (lastTimeRef.current === 0) lastTimeRef.current = time;
@@ -54,7 +54,6 @@ export function PartnerWall() {
 
       if (!isPaused && el) {
         el.scrollLeft += speed * (delta / 16);
-        // Reset scroll when reaching end
         if (el.scrollLeft >= el.scrollWidth - el.clientWidth) {
           el.scrollLeft = 0;
         }
@@ -71,11 +70,10 @@ export function PartnerWall() {
   const scroll = (direction: "left" | "right") => {
     const el = scrollRef.current;
     if (!el) return;
-    const amount = 300;
+    const amount = window.innerWidth < 640 ? 180 : 300;
     el.scrollBy({ left: direction === "left" ? -amount : amount, behavior: "smooth" });
   };
 
-  // Touch/swipe support
   const touchStart = useRef(0);
   const touchScrollStart = useRef(0);
 
@@ -98,11 +96,19 @@ export function PartnerWall() {
   };
 
   return (
-    <section className="relative py-24 sm:py-32 border-t border-[var(--netcb-border)]" aria-labelledby="partners-heading">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="relative py-16 sm:py-24 lg:py-32 border-t border-[var(--netcb-border)] overflow-hidden" aria-labelledby="partners-heading">
+      {/* Background glow */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] sm:w-[600px] h-[200px] sm:h-[300px] bg-[var(--netcb-accent)]/5 blur-[80px] sm:blur-[120px] rounded-full" />
+      </div>
+
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <AnimatedSection>
-          <div className="text-center mb-12">
-            <h2 id="partners-heading" className="text-2xl sm:text-3xl font-bold font-[var(--font-display)] text-[var(--netcb-text)]">
+          <div className="text-center mb-8 sm:mb-12">
+            <span className="inline-block text-xs font-[var(--font-mono)] text-[var(--netcb-accent)] uppercase tracking-widest mb-3 sm:mb-4">
+              Our Partners
+            </span>
+            <h2 id="partners-heading" className="text-xl sm:text-2xl lg:text-3xl font-bold font-[var(--font-display)] text-[var(--netcb-text)]">
               Powered by industry leaders
             </h2>
           </div>
@@ -110,40 +116,40 @@ export function PartnerWall() {
 
         <AnimatedSection delay={200}>
           <div
-            className="relative"
+            className="relative group/carousel"
             role="region"
             aria-label="Partner logos carousel"
             onMouseEnter={() => setIsPaused(true)}
             onMouseLeave={() => setIsPaused(false)}
           >
-            {/* Navigation arrows */}
-            {canScrollLeft && (
-              <button
-                onClick={() => scroll("left")}
-                className="absolute left-0 top-1/2 -translate-y-1/2 z-20 p-2 rounded-full glass-elevated border border-[var(--netcb-border-bright)] text-[var(--netcb-accent)] hover:bg-[var(--netcb-accent)] hover:text-[var(--netcb-base)] transition-all -ml-4 hidden sm:flex"
-                aria-label="Scroll left"
-              >
-                <ChevronLeft className="w-5 h-5" />
-              </button>
-            )}
-            {canScrollRight && (
-              <button
-                onClick={() => scroll("right")}
-                className="absolute right-0 top-1/2 -translate-y-1/2 z-20 p-2 rounded-full glass-elevated border border-[var(--netcb-border-bright)] text-[var(--netcb-accent)] hover:bg-[var(--netcb-accent)] hover:text-[var(--netcb-base)] transition-all -mr-4 hidden sm:flex"
-                aria-label="Scroll right"
-              >
-                <ChevronRight className="w-5 h-5" />
-              </button>
-            )}
+            {/* Nav arrows - desktop only */}
+            <button
+              onClick={() => scroll("left")}
+              className={`absolute left-0 top-1/2 -translate-y-1/2 z-20 p-2.5 sm:p-3 rounded-full glass-elevated border border-[var(--netcb-border-bright)] text-[var(--netcb-accent)] hover:bg-[var(--netcb-accent)] hover:text-[var(--netcb-base)] transition-all duration-300 -ml-3 sm:-ml-4 hidden sm:flex opacity-0 group-hover/carousel:opacity-100 ${
+                canScrollLeft ? "cursor-pointer" : "pointer-events-none opacity-0"
+              }`}
+              aria-label="Scroll left"
+            >
+              <ChevronLeft className="w-5 h-5" />
+            </button>
+            <button
+              onClick={() => scroll("right")}
+              className={`absolute right-0 top-1/2 -translate-y-1/2 z-20 p-2.5 sm:p-3 rounded-full glass-elevated border border-[var(--netcb-border-bright)] text-[var(--netcb-accent)] hover:bg-[var(--netcb-accent)] hover:text-[var(--netcb-base)] transition-all duration-300 -mr-3 sm:-mr-4 hidden sm:flex opacity-0 group-hover/carousel:opacity-100 ${
+                canScrollRight ? "cursor-pointer" : "pointer-events-none opacity-0"
+              }`}
+              aria-label="Scroll right"
+            >
+              <ChevronRight className="w-5 h-5" />
+            </button>
 
             {/* Fade edges */}
-            <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-[var(--netcb-base)] to-transparent z-10 pointer-events-none" />
-            <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-[var(--netcb-base)] to-transparent z-10 pointer-events-none" />
+            <div className="absolute left-0 top-0 bottom-0 w-8 sm:w-16 lg:w-24 bg-gradient-to-r from-[var(--netcb-base)] via-[var(--netcb-base)]/80 to-transparent z-10 pointer-events-none" />
+            <div className="absolute right-0 top-0 bottom-0 w-8 sm:w-16 lg:w-24 bg-gradient-to-l from-[var(--netcb-base)] via-[var(--netcb-base)]/80 to-transparent z-10 pointer-events-none" />
 
             {/* Scrollable container */}
             <div
               ref={scrollRef}
-              className="flex gap-4 overflow-x-auto scrollbar-hide snap-x snap-mandatory"
+              className="flex gap-3 sm:gap-4 lg:gap-5 overflow-x-auto scrollbar-hide snap-x snap-mandatory py-3 sm:py-4"
               style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
               onTouchStart={onTouchStart}
               onTouchMove={onTouchMove}
@@ -152,10 +158,20 @@ export function PartnerWall() {
               {[...partners, ...partners].map((partner, i) => (
                 <div
                   key={`${partner.name}-${i}`}
-                  className="flex-shrink-0 snap-start px-6 py-5 glass rounded-xl min-w-[200px] hover:glass-elevated transition-all duration-300 group cursor-default flex items-center justify-center"
+                  className="flex-shrink-0 snap-start px-5 sm:px-6 lg:px-8 py-4 sm:py-5 lg:py-6 glass rounded-xl sm:rounded-2xl min-w-[140px] sm:min-w-[180px] lg:min-w-[220px] hover:glass-elevated transition-all duration-500 group cursor-default flex items-center justify-center border border-transparent hover:border-[var(--netcb-accent)]/20 hover:shadow-[0_0_20px_rgba(0,229,255,0.15)]"
                 >
                   <PartnerLogo name={partner.name} logo={partner.logo} />
                 </div>
+              ))}
+            </div>
+
+            {/* Scroll indicator dots - mobile only */}
+            <div className="flex justify-center gap-1.5 mt-4 sm:hidden">
+              {partners.slice(0, 5).map((_, i) => (
+                <div
+                  key={i}
+                  className="w-1.5 h-1.5 rounded-full bg-[var(--netcb-text-muted)]/30"
+                />
               ))}
             </div>
           </div>
