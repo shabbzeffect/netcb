@@ -22,7 +22,7 @@ export function PartnerWall() {
   const [isPaused, setIsPaused] = useState(false);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
-  const animRef = useRef<number>();
+  const animRef = useRef<number>(0);
   const lastTimeRef = useRef<number>(0);
 
   const checkScroll = useCallback(() => {
