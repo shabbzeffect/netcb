@@ -742,21 +742,35 @@ export function AboutPageClient() {
       </section>
 
       {/* Timeline */}
-      <section className="relative py-24 border-t border-[var(--netcb-border)]">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative py-20 sm:py-28 border-t border-[var(--netcb-border)] overflow-hidden">
+        {/* Background decorative elements */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[var(--netcb-accent)]/5 blur-[120px] rounded-full" />
+        </div>
+
+        <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection>
-            <div className="text-center mb-16">
-              <h2 className="text-3xl font-bold font-[var(--font-display)] text-[var(--netcb-text)]">
+            <div className="text-center mb-12 sm:mb-16">
+              <span className="inline-block text-xs font-[var(--font-mono)] text-[var(--netcb-accent)] uppercase tracking-widest mb-4">
+                Our Journey
+              </span>
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold font-[var(--font-display)] text-[var(--netcb-text)]">
                 23 years of building trust
               </h2>
+              <p className="text-[var(--netcb-text-muted)] mt-4 max-w-xl mx-auto">
+                From a small startup in Pretoria to a pan-African enterprise IT leader.
+              </p>
             </div>
           </AnimatedSection>
 
           <div className="relative">
-            {/* Vertical line */}
-            <div className="absolute left-4 sm:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-[var(--netcb-accent)] via-[var(--netcb-border)] to-transparent" />
+            {/* Vertical line with glow */}
+            <div className="absolute left-6 sm:left-1/2 top-0 bottom-0 w-px">
+              <div className="absolute inset-0 bg-gradient-to-b from-[var(--netcb-accent)] via-[var(--netcb-border)] to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-b from-[var(--netcb-accent)] via-[var(--netcb-border)] to-transparent blur-sm opacity-50" />
+            </div>
 
-            <div className="space-y-12">
+            <div className="space-y-8 sm:space-y-12">
               {timeline.map((item, i) => (
                 <AnimatedSection
                   key={item.year}
@@ -764,29 +778,71 @@ export function AboutPageClient() {
                   direction={i % 2 === 0 ? "left" : "right"}
                 >
                   <div
-                    className={`relative flex items-start gap-6 ${
+                    className={`relative flex items-start gap-4 sm:gap-8 ${
                       i % 2 === 0 ? "sm:flex-row" : "sm:flex-row-reverse"
                     }`}
                   >
-                    {/* Dot */}
-                    <div className="absolute left-4 sm:left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-[var(--netcb-accent)] border-2 border-[var(--netcb-base)] z-10 mt-1" />
+                    {/* Dot with pulse */}
+                    <div className="absolute left-6 sm:left-1/2 -translate-x-1/2 z-10">
+                      <div className="relative">
+                        <div className="w-4 h-4 rounded-full bg-[var(--netcb-accent)] border-2 border-[var(--netcb-base)] shadow-[0_0_12px_var(--netcb-accent-glow)]" />
+                        <div className="absolute inset-0 w-4 h-4 rounded-full bg-[var(--netcb-accent)] animate-ping opacity-20" />
+                      </div>
+                    </div>
 
-                    {/* Content */}
+                    {/* Content card */}
                     <div
                       className={`ml-12 sm:ml-0 sm:w-[calc(50%-2rem)] ${
                         i % 2 === 0 ? "sm:text-right sm:pr-8" : "sm:text-left sm:pl-8"
                       }`}
                     >
-                      <div className="text-sm font-[var(--font-mono)] text-[var(--netcb-accent)] font-semibold mb-1">
-                        {item.year}
+                      <div className={`glass rounded-xl p-5 sm:p-6 hover:glass-elevated transition-all duration-500 border border-transparent hover:border-[var(--netcb-accent)]/20 hover:shadow-[0_0_20px_rgba(0,229,255,0.08)] ${
+                        i % 2 === 0 ? "sm:ml-auto" : ""
+                      }`}>
+                        {/* Year badge */}
+                        <div className={`inline-flex items-center gap-2 mb-3 ${i % 2 === 0 ? "sm:flex-row-reverse" : ""}`}>
+                          <div className="w-8 h-8 rounded-lg bg-[var(--netcb-accent)]/10 flex items-center justify-center">
+                            <Calendar className="w-4 h-4 text-[var(--netcb-accent)]" />
+                          </div>
+                          <span className="text-lg sm:text-xl font-bold font-[var(--font-mono)] text-[var(--netcb-accent)]">
+                            {item.year}
+                          </span>
+                        </div>
+                        <p className="text-sm sm:text-base text-[var(--netcb-text-muted)] leading-relaxed">
+                          {item.event}
+                        </p>
                       </div>
-                      <p className="text-[var(--netcb-text-muted)]">{item.event}</p>
                     </div>
                   </div>
                 </AnimatedSection>
               ))}
             </div>
+
+            {/* End dot */}
+            <div className="absolute left-6 sm:left-1/2 -translate-x-1/2 bottom-0 z-10">
+              <div className="w-3 h-3 rounded-full bg-[var(--netcb-surface-3)] border-2 border-[var(--netcb-border)]" />
+            </div>
           </div>
+
+          {/* Timeline stats */}
+          <AnimatedSection delay={400}>
+            <div className="mt-12 sm:mt-16 grid grid-cols-3 gap-4 sm:gap-8 max-w-lg mx-auto">
+              {[
+                { value: "23+", label: "Years" },
+                { value: "15+", label: "Countries" },
+                { value: "500+", label: "Clients" },
+              ].map((stat) => (
+                <div key={stat.label} className="text-center glass rounded-xl p-4">
+                  <div className="text-xl sm:text-2xl font-bold font-[var(--font-display)] text-[var(--netcb-accent)]">
+                    {stat.value}
+                  </div>
+                  <div className="text-xs font-[var(--font-mono)] text-[var(--netcb-text-muted)] uppercase tracking-wider mt-1">
+                    {stat.label}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </AnimatedSection>
         </div>
       </section>
 
